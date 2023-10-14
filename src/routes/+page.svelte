@@ -33,6 +33,18 @@
     logEvent(`[GET] data received: ${JSON.stringify(data)}`);
   };
 
+  const sendWSSData = () => {
+    if (!ws) return;
+    ws.send('Hello from SvelteKit!');
+    logEvent('[websocket] message sent');
+  }
+
+  const destroyWebSocket = () => {
+    if (!ws) return;
+    ws.close();
+    webSocketEstablished = false;
+  };
+
 </script>
 
 <main>
@@ -45,6 +57,10 @@
   <button on:click={() => requestData()}>
     Request Data from GET endpoint
   </button>
+
+  <button on:click={() => sendWSSData()}>Send data to server</button>
+
+  <button on:click={destroyWebSocket}>Close connection</button>
   
   <ul>
     {#each log as event}
