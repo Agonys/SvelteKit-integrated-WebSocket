@@ -1,9 +1,9 @@
-import { parse } from 'url';
+import { parse } from 'node:url';
 import { WebSocketServer } from 'ws';
 import { nanoid } from 'nanoid';
 import type { Server, WebSocket as WebSocketBase } from 'ws';
-import type { IncomingMessage } from 'http';
-import type { Duplex } from 'stream';
+import type { IncomingMessage } from 'node:http';
+import type { Duplex } from 'node:stream';
 
 export const GlobalThisWSS = Symbol.for('sveltekit.wss');
 
