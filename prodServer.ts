@@ -11,7 +11,8 @@ console.log(
 		{
 			filename: __filename,
 			dirname: __dirname,
-			files: fs.readdirSync(__dirname)
+			files: fs.readdirSync(__dirname),
+			build: fs.readdirSync(path.resolve(__dirname, './.svelte-kit/cloudflare'))
 		},
 		null,
 		2
