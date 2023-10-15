@@ -32,11 +32,13 @@
 		"tslib": "^2.6.0",
 		"tsm": "^2.3.0",
 		"typescript": "^5.1.6",
-		"vite": "^4.3.9"
+		"vite": "^4.3.9",
+		"vite-plugin-node-stdlib-browser": "^0.2.1"
 	},
 	"type": "module",
 	"dependencies": {
 		"nanoid": "^4.0.2",
+		"node-stdlib-browser": "^1.2.0",
 		"ws": "^8.13.0"
 	}
 }
