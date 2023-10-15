@@ -12,6 +12,7 @@ console.log(
 			filename: __filename,
 			dirname: __dirname,
 			files: fs.readdirSync(__dirname),
+			sveltekit: fs.readdirSync(path.resolve(__dirname, './.svelte-kit')),
 			build: fs.readdirSync(path.resolve(__dirname, './.svelte-kit/cloudflare')),
 			app: fs.readdirSync(path.resolve(__dirname, './.svelte-kit/cloudflare/_app')),
 			workerJS: fs.readFileSync(
