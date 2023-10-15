@@ -12,7 +12,13 @@ console.log(
 			filename: __filename,
 			dirname: __dirname,
 			files: fs.readdirSync(__dirname),
-			build: fs.readdirSync(path.resolve(__dirname, './.svelte-kit/cloudflare'))
+			build: fs.readdirSync(path.resolve(__dirname, './.svelte-kit/cloudflare')),
+			app: fs.readdirSync(path.resolve(__dirname, './.svelte-kit/cloudflare/_app')),
+			headers: fs.readdirSync(path.resolve(__dirname, './.svelte-kit/cloudflare/_headers')),
+			workerJS: fs.readFileSync(
+				path.resolve(__dirname, './.svelte-kit/cloudflare/_worker.js'),
+				'utf-8'
+			)
 		},
 		null,
 		2
