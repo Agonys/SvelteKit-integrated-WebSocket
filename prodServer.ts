@@ -14,11 +14,7 @@ console.log(
 			files: fs.readdirSync(__dirname),
 			sveltekit: fs.readdirSync(path.resolve(__dirname, './.svelte-kit')),
 			build: fs.readdirSync(path.resolve(__dirname, './.svelte-kit/cloudflare')),
-			app: fs.readdirSync(path.resolve(__dirname, './.svelte-kit/cloudflare/_app')),
-			workerJS: fs.readFileSync(
-				path.resolve(__dirname, './.svelte-kit/cloudflare/_worker.js'),
-				'utf-8'
-			)
+			app: fs.readdirSync(path.resolve(__dirname, './.svelte-kit/cloudflare/_app'))
 		},
 		null,
 		2
@@ -27,5 +23,5 @@ console.log(
 
 createWSSGlobalInstance();
 
-const { server } = await import(path.resolve(__dirname, './.svelte-kit/cloudflare/index.js'));
+const { server } = await import(path.resolve(__dirname, './.svelte-kit/cloudflare/_worker.js'));
 server.server.on('upgrade', onHttpServerUpgrade);
