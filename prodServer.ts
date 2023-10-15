@@ -7,5 +7,5 @@ const __dirname = path.dirname(__filename);
 
 createWSSGlobalInstance();
 
-const { server } = await import(path.resolve(__dirname, './build/index.js'));
+const { server } = await import(path.resolve(__dirname, './.svelte-kit/cloudflare/index.js'));
 server.server.on('upgrade', onHttpServerUpgrade);
